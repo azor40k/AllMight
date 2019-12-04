@@ -1,0 +1,1157 @@
+/**** INITIALISATION ****/
+*,
+html{
+    margin: 0;
+    padding: 0;
+} /* 0 marge intérieur/extérieur sur toutes les pages */
+
+body {
+    font-family: 'Oswald', sans-serif; /* font utilisé de la page */
+}
+
+/**** MENU BURGER ****/
+header {
+    height: 80px;          /* hauteur du header */
+    width: 100%;           /* largeur du header  (px,vh,em,...) */
+    line-height: 80px;     /* hauteur de la plus grande police */
+    position: fixed;       /* position sur la page voyant */
+    z-index: 9998;         /* ordre de priorité d'empilement des éléments*/
+}
+
+nav {
+    float: right; /* propriété de position (à droite) */
+}
+
+.afterscroll {
+    background-color: darkblue; /* couleur de l'arrière plan en bleu foncé*/
+    box-shadow: 0 0 20px 0;     /* taille de l'ombre exprimé que sur le bas de la div */
+    transition: all 0.5s ease-in; /*temps d'apparition de l'ombre en smooth*/
+}
+
+ul {
+    width: 100%;
+    padding: 0; /* marge intérieur à 0px */
+}
+
+ul li {
+    list-style: none; /* cache les styles de la liste */
+    display: inline-block; /* propriété de placement en ligne */
+}
+
+.logo img {
+    margin: auto 0 0 20px; /* marge extérieur à auto en haut 0 à droite/bas et 20px à gauche */
+}
+
+header nav ul li a {
+    padding-right: 30px; /* marge intétieur droite à 30px */
+    font-size: 16px; /*taille de la font */
+    font-weight: bold; /* épaisseur de la font */
+    color: white; /* couleur de la font */
+    text-decoration: none; 
+    transition: all 0.2s ease-in;
+}
+
+/*au survole du menu*/
+header nav ul li a:hover { 
+    text-decoration: none; /* pas de décoration au survole */
+    color: red; /* changement couleur de font en rouge*/
+}
+
+.toggle {
+    float: right;
+    margin: auto;
+    padding: 0 20px;
+    text-align: right;
+    box-sizing: border-box; /* taille de la boite au border de l'image */
+    color: white;
+    font-size: 30px;
+    display: none; /* cacher*/
+    z-index: 9999;
+}
+
+/**** FOOTER ****/
+footer {
+    width: 100%;
+    background-color: #0d0d0d;
+}
+
+.footer-all {
+    margin: 0 auto;
+    color: white
+}
+
+.footer-all a {
+    color: white;
+}
+
+.footer-all a:hover {
+    color: gray;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.footer-top {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    padding: 2%; 
+    display: flex; /*dispositif en flex*/
+    align-items: center; /* éléments centrer */
+    flex-direction: row; /* éléments en ligne*/
+}
+
+.item-footer {
+    display: inline-block; /*dispositif en ligne*/
+    align-content: center;
+    max-width: 370px; /* largeur maximal de l'éléments */
+    margin: 10px 10px;
+    width: 40%;
+    margin: auto;
+}
+
+/* initialisation des titre h1 */
+.item-footer h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* initialisation des p*/
+.item-footer p {
+    font-size: 14px;
+    color: #C7C7C7;
+    margin-top: 20px;
+}
+
+.menu-footer li {
+    display: block;
+
+}
+
+.menu-footer li a {
+    font-size: 14px;
+}
+
+#droite {
+    padding: 10px;
+}
+
+#droite a {
+    background-color: #343434;
+    padding: 10px;
+}
+
+#droite a:hover {
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column; /* disposition flex en colonne */
+    background-color: black;
+    text-align: center; /* alignement des text centrer*/
+}
+
+/**** Boutton Back Top ****/
+#backtop {
+    display: none;
+    position: fixed;
+    bottom: 55px; /* placement au bas de la page */
+    right: 20px; /* placement à droite de la page */
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer; /* si la souris pointe le boutton*/
+    border: 3px solid #333; /*épaisseur de la bordure */
+    border-radius: 50%; /* changmement du degrée des angles de l'élément*/
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+    outline: none; /*au click pas de décoration */
+    z-index: 9999;
+}
+
+#backtop:hover,
+#back-to-top-btn:focus {
+    background-color: #333;
+    color: #fff;
+}
+
+/* @media -> au changement de la taille de la page */
+@media(max-width: 992px) {
+    #backtop {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+        bottom: 55px;
+        right: 15px;
+    }
+}
+
+@media(max-width:768px) {
+    #backtop {
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
+        bottom: 65px;
+        right: 6px;
+    }
+}
+
+.btnIn {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnIn
+}
+
+
+@keyframes btnIn {
+    from {
+        opacity: 0; /* changement d'opacité */
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.btnOut {
+    animation-duration: 0.25s;
+    animation-fill-mode: both; /* position de l'animation */
+    animation-name: btnOut;
+}
+
+
+@keyframes btnOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+
+/**** CSS PAGE INDEX ****/
+
+/**** BANNER INDEX ****/
+.bannerAccueil {
+    height: 100vh;
+    background-image: url(../img/banner1.jpg);
+    background-size: cover; 
+    background-position: center; /*position vu de l'image*/
+    background-attachment: fixed; /*image ne scroll pas (parallax) */
+}
+
+/**** PRESENTATION PERSONNAGE ****/
+.mainPageIndex {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url(../img/mainbg.png);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.presentationAM {
+    margin: auto;
+    width: 90%;
+}
+
+
+.intro {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.intro h2,
+.intro p {
+    text-align: center;
+}
+
+.intro h2 {
+    color: gold;
+    padding: 10px;
+    max-width: 420px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.intro p {
+    font-size: 16px;
+    padding: 10px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+span {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.container-presentation {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+}
+
+.contenu-presentation {
+    margin: auto;
+    padding: 0 20px 20px 20px;
+    max-width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+}
+
+.contenu-presentation h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.contenu-presentation p {
+    font-size: 13px;
+}
+
+.contenu-presentation p b {
+    font-size: 16px;
+}
+
+.contenu-presentation p i {
+    font-size: 16px;
+    color: gold;
+}
+
+.stat {
+    max-width: 100%;
+    height: 85px;
+    background-image: url(../img/stat.png);
+    background-size: cover;
+    padding-bottom: 26.73%;
+}
+
+/**** SLIDER ****/
+#slider {
+    overflow: hidden; /* tout exces à la taille de l'élément est caché*/ 
+}
+
+#slider figure {
+    position: relative;
+    width: 400%;
+    margin: 0;
+    left: 0;
+    animation: 15s slider infinite; /* animation de 15s en boucle */
+}
+
+#slider figure img {
+    float: left;
+    width: 25%;
+}
+
+
+
+@keyframes slider { /* de 0% à 100% de la largeur de l'éléments */
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -300%;
+    }
+    
+    /* déplacement vers la gauche des images (widht de 400%) 0-100% image1 100-200% image 2 200-300% image3, ensuite reste sur l'image3 pour finir les 15s */
+}
+
+/**** LIGNE SEPARATION ****/
+.hline-top {
+    margin: auto;
+    width: 200px;
+    border-bottom: 3px solid #000;
+}
+
+.hline-bottom {
+    margin: auto;
+    width: 400px;
+    border-bottom: 3px solid #000;
+}
+
+/**** BOUTON SAVOIR PLUS ****/
+.btn-intro,
+.btn-intro2 {
+    margin: auto;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.35);
+    font-weight: bold;
+    outline: none;
+}
+
+.btn-intro:hover,
+.btn-intro2:hover {
+    background-color: darkblue;
+    color: red;
+    transition: all 0.2s;
+}
+
+.btn-intro2 {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/**** PAGE HISTOIRE ****/
+
+.bannerHistoire {
+    height: 760px;
+    background-image: url(../img/am5.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.mainHistoire {
+    background-image: url(../img/amam.png);
+    background-size: cover;
+}
+
+.bioAM {
+    width: 80%;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bioLogo {
+    margin: auto;
+    height: 90px;
+    width: 460px;
+    background-image: url(../img/logo.png);
+    background-size: cover;
+}
+
+.bioAM p {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    font-size: 17px;
+    color: white;
+}
+
+.bioAppAM,
+.bioAM {
+    align-content: center;
+    text-align: center;
+}
+
+.bioAppAM h2,
+.bioAM h2 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: white;
+    text-align: center;
+}
+
+.appBox {
+
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.bioAM h3 {
+    font-size: 40px;
+    color: white;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.bioAM img {
+    padding: 10px;
+}
+
+/**** PAGE PERSONNAGES ****/
+
+
+.split,
+.split2 {
+    position: relative; /* position approximative de sa position initiale */
+    height: 100vh;
+    display: flex;
+    background: #000;
+}
+
+.split2 {
+    height: 70vh;
+}
+
+.split .screen,
+.split2 .screen2 {
+    position: relative;
+    flex-grow: 2; /* taille de l'image réduit */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.split:hover .screen,
+.split2:hover .screen2 {
+    opacity: 0.1;
+}
+
+.split .screen:hover,
+.split2 .screen2:hover {
+    flex-grow: 10; /* zoom sur l'image au survole */
+    opacity: 1;
+}
+
+/* nth-child() selectionne l'enfant par ordre () de l'élément si plusieurs on le meme nom */    
+.split .screen:nth-child(1) {
+    background: url(../img/pptorino.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.split .screen:nth-child(2) {
+    background: url(../img/ppnana.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.split .screen:nth-child(3) {
+    background: url(../img/ppafo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.split2 .screen2:nth-child(1) {
+    background: url(../img/ppdeku.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.split2 .screen2:nth-child(2) {
+    background: url(../img/ppkatchan.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.split .screen .screenText,
+.split2 .screen2 .screenText {
+    position: absolute;
+    max-width: 500px;
+    height: auto;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    transform: translateX(100%); /* déplace de sa position initiale*/
+    transition: 0.5s;
+    text-align: justify;
+}
+
+.split .screen:hover .screenText,
+.split2 .screen2:hover .screenText {
+    transform: translateX(0);
+    transition-delay: 0.5s;
+}
+
+.split .screen .screenText h2,
+.split2 .screen2 .screenText h2 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase; /*met en majuscule*/
+    font-size: 30px;
+    font-weight: bolder;
+    color: #ed363a;
+}
+
+.split .screen .screenText p,
+.split2 .screen2 .screenText p {
+    margin: 0;
+    padding: 0;
+}
+
+/**** PAGE BLOG ****/
+.mainBlog {
+    min-height: 100vh;
+    background-image: url(../img/cover.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.mainBlog a h1{
+    font-size: 70px;
+    font-weight: bolder;
+     color: white;
+}
+.mainBlog h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.mainBlog section {
+    width: 80%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.72);
+}
+
+.blogImg {
+    display: none;
+}
+.blogArticle{
+    width: 80%;
+    margin: auto;
+}
+.boxArticle{
+    display: flex;
+    flex: row;
+    text-align: center;
+    justify-content: center;
+}
+
+/**** PAGE PROFIL ****/
+.mainProfil {
+    height: 100vh;
+    background-image: url(../img/prohero.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.boxProfil {
+    background: rgba(0, 0, 0, 0.93);
+    margin: auto;
+    padding: 10px;
+    border-radius: 10%;
+    color: #fff;
+}
+
+.boxProfil h1 {
+    font-size: 40px;
+    font-weight: bolder;
+
+}
+
+.boxProfil h2,
+.boxProfil h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.boxProfil h3 {
+    background: #fff;
+    width: 70%;
+}
+
+.boxProfil p {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+/**** PAGE ADMINSTRATEUR ****/
+/**** Main Admin ****/
+.mainAdmin {
+    background-color: #1c1b1b;
+    min-height: 100vh;
+}
+
+.mainAdmin h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+/**** Menu Admin ****/
+.adminMenu {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+
+}
+
+/**** Bouttton Menu Admin ****/
+.adminMenu button {
+    background-color: darkblue;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+}
+
+.adminMenu button:hover {
+    background-color: #5c5c5c;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/**** DISPLAY DES PAGES MEMBRE CONTACT IMAGE ARTICLE ****/
+.adminMembre,
+.adminContact,
+.adminImg,
+.adminArticle {
+    margin: auto;
+    display: none;
+    color: #fff;
+    background: #626262;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/**** Membre Admin ****/
+.adminMembreAll,
+.adminMembreAd,
+.adminMembreMem {
+    margin: auto;
+    color: #fff;
+    display: none;
+    background: #626262;
+    padding: 10px;
+    text-align: center;
+}
+
+.adminMembre,
+.adminMembreAll {
+    display: block;
+}
+
+/**** Contact Admin ****/
+.adminMenuContact,
+.adminContactAncient,
+.adminContactRecent,
+.adminContactMail {
+    display: none;
+}
+
+.contactObjet {
+    color: #000;
+    width: 80%;
+}
+
+/**** IMAGE Admin ****/
+/**** ARTICLE Admin ****/
+.adminImg,
+.adminArticle {
+    color: #000;
+    margin: 20px auto;
+    border: 1px solid #cbcbcb;
+
+}
+
+.adminImg form,
+.adminArticle form {
+    width: 50%;
+    margin: 20px auto;
+}
+
+
+
+/**** PAGE MODIFICATION ****/
+
+.mainModif {
+    color: #fff;
+    background-color: #1c1b1b;
+    min-height: 100vh; /* hauteur minimum de l'élément*/
+}
+
+.mainModif input {
+    color: #000;
+}
+
+/**** PAGE CONNEXION ****/
+.mainConnexion {
+    height: 100vh;
+    background-image: url(../img/713076.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.boxConnexion {
+    background: rgba(0, 0, 0, 0.59);
+    margin: auto;
+    width: 300px;
+    border-radius: 10%;
+}
+
+.boxTitre h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.formConnexion label {
+    font-size: 20px;
+    color: #fff;
+}
+
+.formConnexion input[type=submit],
+.formConnexion input[type=button],
+.formInscription input[type=submit] {
+    background-color: darkblue;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formConnexion input[type=submit]:hover,
+.formConnexion input[type=button]:hover,
+.formInscription input[type=submit]:hover {
+    background-color: red;
+}
+
+.formConnexion input[type=pasword] {
+    color: #000;
+}
+
+.formConnexion input[type=text],
+.formConnexion input[type=password],
+.formInscription input[type=text],
+.formInscription input[type=password],
+.formInscription input[type=email] {
+    max-width: 300px;
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 5px;
+    resize: vertical;
+}
+
+
+
+/**** PAGE Inscription ****/
+.bannerInscription {
+    height: 100vh;
+    background-image: url(../img/ua.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.formInscription {
+    background-color: rgba(0, 0, 0, 0.76);
+    margin: auto;
+    border-radius: 5%;
+}
+
+.formInscription h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.formInscription h2 {
+    margin: auto 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+
+
+/**** PAGE MENTIONS LEGALES ****/
+.bannerPageML {
+    height: 80vh;
+    background-image: url(../img/bannerML.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.mention {
+    margin: auto;
+    width: 90%;
+}
+
+.tete h2 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.tete p {
+    font-size: 14px;
+    margin: auto;
+    width: 80%;
+}
+
+.corp {
+    margin: auto;
+    width: 90%;
+}
+
+.corp h3 {
+    font-weight: bolder;
+}
+
+.corp p {
+    font-size: 14px;
+}
+
+/**** PAGE DE CONTACT ****/
+.bannerPageContact {
+    height: 80px;
+    background-color: darkblue;
+}
+
+.mainContact {
+    background-color: darkblue;
+}
+
+.cont-form input[type=text],
+.cont-form input[type=email],
+.cont-form select,
+.cont-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.cont-form label {
+    color: #292929;
+}
+
+.cont-form input[type=submit],
+.cont-form input[type=reset] {
+    background-color: darkblue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cont-form input[type=submit]:hover,
+.cont-form input[type=reset]:hover {
+    background-color: red;
+}
+
+.box {
+    display: flex;
+}
+
+.boxbox {
+    width: 30%;
+    display: inline-block;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.titre h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+
+/**** PARTI RESPONSIVE ****/
+@media screen and (max-width:1200px) {
+
+    /* MODIFICATION DIV PRESENTATION */
+    .container-presentation {
+        flex-direction: column;
+    }
+
+    .contenu {
+        margin: 10px auto;
+        max-width: 500px;
+    }
+
+}
+
+@media screen and (max-width:1000px) {
+
+    /**** MENU BOUTON RESPONSIVE ****/
+    .toggle {
+        display: block;
+    }
+
+    .toggle:hover {
+        text-decoration: none;
+        transition: all 0.2s ease-in;
+        color: red;
+    }
+
+    header {
+        width: 100%;
+        background-color: darkblue;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        width: 100%;
+        display: none;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        background: #000057;
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    /**** FOOTER RESPONSIVE ****/
+
+
+    .item-footer {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .item-flex {
+        margin: 25px 0;
+        width: 100%;
+    }
+
+    .menu-footer li {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .information {
+        margin-bottom: 5px;
+    }
+
+    /**** HISTOIRE RESPONSIVE ****/
+
+    .appBox {
+        flex-direction: column;
+    }
+
+    .appBox img {
+        height: 300px;
+    }
+}
+
+
+@media screen and (max-width:700px) {
+
+    /* BANNER CHANGEMENT */
+    /* PAGE 1 */
+    .banner1 {
+        height: 300px;
+        background-image: url(../img/banner2.png);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    /* PAGE MENTIONS LEGALES */
+    .bannerPageML,
+    .bannerHistoire {
+        height: 360px;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+
+    /* MODIFICATION DIV PRESENTATION */
+    .hline-top {
+        width: 100px;
+    }
+
+    .hline-bottom {
+        width: 300px;
+    }
+
+    .intro {
+        max-width: 500px;
+    }
+
+    .contenu {
+        margin: 10px auto;
+        max-width: 350px;
+    }
+}
