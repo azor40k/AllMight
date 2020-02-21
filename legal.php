@@ -50,12 +50,6 @@
                     1.2 Éditeur (ci-après « l'éditeur ») :<br><br>
 
                     Axel CARANDANG,<br>
-                    Demeurant : X, 75116 Paris,<br>
-                    N° SIREN : 83156217800010,<br>
-                    N° de téléphone : 0651989820,<br>
-                    Adresse mail : axel.carandang2@edu.devinci.fr.<br><br>
-
-                    1.3 Hébergeur (ci-après « l'hébergeur ») : <br>
 
                     All Might est hébergé par X, dont le siège social est situé à X.
                 </p><br>
